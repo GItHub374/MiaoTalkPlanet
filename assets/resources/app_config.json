@@ -1,0 +1,11 @@
+{
+    "config" : {
+        "version" : "1.0.0",
+
+        "httpServer" : "127.0.0.1",
+        "httpTimeout" : 10000,
+
+        "storage_key" : "hello",
+        "storage_iv" : "world"
+    }
+}
