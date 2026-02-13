@@ -19,11 +19,13 @@ import { GlobalTool } from '../../core/common/tool/global_tool';
 import { BUILD, DEBUG, DEV, EDITOR, HTML5, NATIVE, PREVIEW } from "cc/env";
 import { VERSION } from '../../version';
 import { UIID } from '../config/ui_config';
+import { assetManager } from 'cc';
+import { BundleManager } from '../../core/common/bundle/BundleManager';
 
 const { ccclass, property } = _decorator;
 
 /**
- * 这个脚本挂在 ludo.scene 的 root 节点下面，随游戏启动
+ * 这个脚本挂在 cat.scene 的 root 节点下面，随游戏启动
  */
 
 @ccclass('loading')
@@ -71,6 +73,8 @@ export class loading extends Root {
 
         //事件系统
         mius.event = this.data_node.getComponent(EventManager) || this.data_node.addComponent(EventManager)!;
+
+        mius.bundle = this.data_node.getComponent(BundleManager) || this.data_node.addComponent(BundleManager)!;
 
         mius.storage = this.data_node.getComponent(StorageManager) || this.data_node.addComponent(StorageManager)!;
         //配置存储密钥
@@ -144,11 +148,12 @@ export class loading extends Root {
         this._queue.push((next: NextQueueFunc, params: any) => {
             mius.log.logNet("加载resources")
 
-            mius.res.loadDir("resources", null, next);
+            mius.bundle.loadBundle("cat", next)
+            // mius.res.loadDir("resources", null, next);
         });
 
         this._queue.push((next: NextQueueFunc, params: any) => {
-            mius.log.logNet("加载 ludo images")
+            mius.log.logNet("加载 cat images")
 
             mius.res.loadDir("cat", "images", (finished: number, total: number, item: any) => {
                 var progress = finished / total * 0.6;
@@ -157,7 +162,7 @@ export class loading extends Root {
         });
 
         this._queue.push((next: NextQueueFunc, params: any) => {
-            mius.log.logNet("加载 ludo prefab")
+            mius.log.logNet("加载 cat prefab")
 
             mius.res.load("cat", "prefab/lobby", (err: Error | null, res: Prefab) => {
                 this.set_progress(0.9)
@@ -171,6 +176,7 @@ export class loading extends Root {
 
             if (!mius.gui.get_is_showing(UIID.LOBBY_UI)) {
                 mius.gui.show_ui(UIID.LOBBY_UI);
+                mius.gui.show_ui(UIID.STORY_MAIN);
             }
             // let uid = mius.user.uid;
             // let token = mius.user.token

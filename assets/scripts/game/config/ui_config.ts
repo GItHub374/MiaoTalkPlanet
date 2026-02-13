@@ -48,6 +48,9 @@ export enum UIID {
     LOBBY_UI = 50,
     GAME_2048 = 51,
     TEST_UI = 52,
+
+    // story
+    STORY_MAIN = 70,
 }
 
 export const UI_CONFIG_DATA: UI_VAR.UI_CONFIG[] = [
@@ -79,4 +82,7 @@ export const UI_CONFIG_DATA: UI_VAR.UI_CONFIG[] = [
     { uiid: UIID.LOBBY_UI, layer: LayerType.UI, bundle: "cat", prefab: "prefab/lobby" },
     { uiid: UIID.GAME_2048, layer: LayerType.UI, bundle: "game_2048", prefab: "prefab/game_main" },
     { uiid: UIID.TEST_UI, layer: LayerType.UI, bundle: "cat", prefab: "prefab/test" },
+
+    // story
+    { uiid: UIID.STORY_MAIN, layer: LayerType.UI, bundle: "story", prefab: "prefab/story_game" },
 ]

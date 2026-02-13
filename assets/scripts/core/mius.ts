@@ -13,6 +13,7 @@ import { debug_controller } from "../debug/debug_controller";
 import { AudioManager } from "./common/audio/AudioManager";
 import { ResLoader } from "./common/loader/ResLoader";
 import { UserManager } from "../game/data/UserManager";
+import { BundleManager } from "./common/bundle/BundleManager";
 
 /**全局变量管理
  * 
@@ -45,6 +46,8 @@ export class mius {
     /**多语言管理 */
     public static language : LanguageManager;
 
+    public static bundle: BundleManager;
+
     /**Socket */
     public static socket : SocketNode;
 
@@ -73,5 +76,6 @@ export class mius {
         mius.gui.clean()
         mius.event.clean()
         mius.user.clean()
+        mius.bundle.clean()
     }
 }

@@ -2,12 +2,42 @@ import { UIID } from "../config/ui_config";
 
 export namespace CAT_CONFIG {
     export const VOICE_CONFIG: { voice: string }[] = [
-        { voice: "cat:audio/cat_voice_1" },
-        { voice: "cat:audio/cat_voice_2" },
-        { voice: "cat:audio/cat_voice_3" },
-        { voice: "cat:audio/cat_voice_4" },
-        { voice: "cat:audio/cat_voice_5" },
-        { voice: "cat:audio/cat_voice_6" },
+        { voice: "audio/cat_voice_1" },
+        { voice: "audio/cat_voice_2" },
+        { voice: "audio/cat_voice_3" },
+        { voice: "audio/cat_voice_4" },
+        { voice: "audio/cat_voice_5" },
+        { voice: "audio/cat_voice_6" },
+    ]
+
+    export enum CONTENT_TYPE {
+        NONE = 0,
+        TITLE = 1,
+        VOICE = 2,
+    }
+
+    export const VOICE_VIEW_CONFIG: { type: number, voice_path?:string, img_path?:string, text?:string }[] = [
+        { type: CONTENT_TYPE.TITLE, text: "听猫咪声音" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_mm", img_path:"cat:images/voice/voice_icon_mm", voice_path: "audio/cat_voice_1" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_cn", img_path:"cat:images/voice/voice_icon_cn", voice_path: "audio/cat_voice_2" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_dmm", img_path:"cat:images/voice/voice_icon_dmm", voice_path: "audio/cat_voice_3" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_fdp", img_path:"cat:images/voice/voice_icon_fdp", voice_path: "audio/cat_voice_4" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_fk", img_path:"cat:images/voice/voice_icon_fk", voice_path: "audio/cat_voice_5" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_fn", img_path: "cat:images/voice/voice_icon_fn", voice_path: "audio/cat_voice_6" },
+        { type: CONTENT_TYPE.TITLE, text: "陪猫咪玩" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_qt", img_path: "cat:images/voice/voice_icon_qt", voice_path: "audio/cat_voice_1" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_gx", img_path: "cat:images/voice/voice_icon_gx", voice_path: "audio/cat_voice_2" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_hs", img_path: "cat:images/voice/voice_icon_hs", voice_path: "audio/cat_voice_3" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_hx", img_path: "cat:images/voice/voice_icon_hx", voice_path: "audio/cat_voice_4" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_jy", img_path: "cat:images/voice/voice_icon_jy", voice_path: "audio/cat_voice_5" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_ml", img_path: "cat:images/voice/voice_icon_ml", voice_path: "audio/cat_voice_6" },
+        { type: CONTENT_TYPE.TITLE, text: "陪猫咪玩" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_qt", img_path: "cat:images/voice/voice_icon_qt", voice_path: "audio/cat_voice_1" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_gx", img_path: "cat:images/voice/voice_icon_gx", voice_path: "audio/cat_voice_2" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_hs", img_path: "cat:images/voice/voice_icon_hs", voice_path: "audio/cat_voice_3" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_hx", img_path: "cat:images/voice/voice_icon_hx", voice_path: "audio/cat_voice_4" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_jy", img_path: "cat:images/voice/voice_icon_jy", voice_path: "audio/cat_voice_5" },
+        { type: CONTENT_TYPE.VOICE, text: "voice_icon_ml", img_path: "cat:images/voice/voice_icon_ml", voice_path: "audio/cat_voice_6" },
     ]
 
     export const GAME_CONFIG: { game_id: number }[] = [
