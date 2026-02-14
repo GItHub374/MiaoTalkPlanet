@@ -176,6 +176,7 @@ export class loading extends Root {
 
             if (!mius.gui.get_is_showing(UIID.LOBBY_UI)) {
                 mius.gui.show_ui(UIID.LOBBY_UI);
+                mius.bundle.loadBundle("story")
                 mius.gui.show_ui(UIID.STORY_MAIN);
             }
             // let uid = mius.user.uid;

@@ -1,6 +1,6 @@
 export interface StoryCmd {
     cmd?: string;
-    label?: string;
+    jumpFlag?: string;
 
     // say
     name?: string;
@@ -12,11 +12,11 @@ export interface StoryCmd {
     // choice
     options?: {
         text: string;
-        jump: string;
+        jumpTo: string;
         condition?: string;
     }[];
 
     // flag
     set?: { [key: string]: any };
-    if?: string;
+    if?: { [key: string]: any };
 }

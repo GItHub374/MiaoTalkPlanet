@@ -1,5 +1,5 @@
 [
-  { "cmd": "bg", "name": "school_gate_day" },
+  { "cmd": "bg", "name": "story:images/chapter1/story_1_2" },
   { "cmd": "bgm", "name": "light_theme" },
 
   {
@@ -30,12 +30,12 @@
   {
     "cmd": "choice",
     "options": [
-      { "text": "主动提出一起走", "jump": "invite", "condition": "" },
-      { "text": "有些害羞地沉默", "jump": "silent", "condition": "" }
+      { "text": "主动提出一起走", "jumpTo": "invite", "condition": "" },
+      { "text": "有些害羞地沉默", "jumpTo": "silent", "condition": "" }
     ]
   },
 
-  { "label": "invite" },
+  { "jumpFlag": "invite" },
 
   {
     "cmd": "set",
@@ -54,9 +54,9 @@
     "text": "诶？那、那就麻烦你啦。"
   },
 
-  { "cmd": "jump", "jump": "walk_home" },
+  { "cmd": "jump", "jumpTo": "walk_home" },
 
-  { "label": "silent" },
+  { "jumpFlag": "silent" },
 
   {
     "cmd": "set",
@@ -77,9 +77,9 @@
 
   { "cmd": "jump", "jump": "walk_home" },
 
-  { "label": "walk_home" },
+  { "jumpFlag": "walk_home" },
 
-  { "cmd": "bg", "name": "street_rain" },
+  { "cmd": "bg", "name": "story:images/chapter1/story_1_1" },
 
   {
     "cmd": "say",
@@ -101,7 +101,7 @@
     ]
   },
 
-  { "label": "hold_hand" },
+  { "jumpFlag": "hold_hand" },
 
   {
     "cmd": "set",
@@ -116,7 +116,7 @@
 
   { "cmd": "jump", "jump": "ending_check" },
 
-  { "label": "ignore" },
+  { "jumpFlag": "ignore" },
 
   {
     "cmd": "say",
@@ -126,7 +126,7 @@
 
   { "cmd": "jump", "jump": "ending_check" },
 
-  { "label": "ending_check" },
+  { "jumpFlag": "ending_check" },
 
   {
     "cmd": "say",
@@ -137,12 +137,12 @@
   {
     "cmd": "jump",
     "jump": "good_ending",
-    "if": "like >= 2"
+    "if": {"like":2}
   },
 
   { "cmd": "jump", "jump": "normal_ending" },
 
-  { "label": "good_ending" },
+  { "jumpFlag": "good_ending" },
 
   { "cmd": "bgm", "name": "romantic_theme" },
 
@@ -166,7 +166,7 @@
 
   { "cmd": "jump", "jump": "the_end" },
 
-  { "label": "normal_ending" },
+  { "jumpFlag": "normal_ending" },
 
   {
     "cmd": "say",
@@ -180,5 +180,9 @@
     "text": "【Normal Ending】擦肩而过"
   },
 
-  { "label": "the_end" }
+  { "jumpFlag": "the_end" },
+
+  {
+    "cmd": "exit"
+  }
 ]
