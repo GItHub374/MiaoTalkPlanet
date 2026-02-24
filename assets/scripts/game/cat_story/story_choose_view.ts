@@ -31,7 +31,7 @@ export class story_choose_view extends Component {
     
     on_click_choose(event: Event, customEventData: string) {
         let choose_index = Number(customEventData)
-        this.callback(this.options[choose_index].jump)
+        this.callback(this.options[choose_index].jumpTo)
     }
 }
 

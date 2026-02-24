@@ -75,7 +75,7 @@
     "text": "那我先走了哦。"
   },
 
-  { "cmd": "jump", "jump": "walk_home" },
+  { "cmd": "jump", "jumpTo": "walk_home" },
 
   { "jumpFlag": "walk_home" },
 
@@ -96,8 +96,8 @@
   {
     "cmd": "choice",
     "options": [
-      { "text": "握住她的手", "jump": "hold_hand" },
-      { "text": "假装没听见", "jump": "ignore" }
+      { "text": "握住她的手", "jumpTo": "hold_hand" },
+      { "text": "假装没听见", "jumpTo": "ignore" }
     ]
   },
 
@@ -114,7 +114,7 @@
     "text": "那以后，每天都一起走吧。"
   },
 
-  { "cmd": "jump", "jump": "ending_check" },
+  { "cmd": "jump", "jumpTo": "ending_check" },
 
   { "jumpFlag": "ignore" },
 
@@ -124,7 +124,7 @@
     "text": "雨下得有点大呢。"
   },
 
-  { "cmd": "jump", "jump": "ending_check" },
+  { "cmd": "jump", "jumpTo": "ending_check" },
 
   { "jumpFlag": "ending_check" },
 
@@ -136,11 +136,11 @@
 
   {
     "cmd": "jump",
-    "jump": "good_ending",
+    "jumpTo": "good_ending",
     "if": {"like":2}
   },
 
-  { "cmd": "jump", "jump": "normal_ending" },
+  { "cmd": "jump", "jumpTo": "normal_ending" },
 
   { "jumpFlag": "good_ending" },
 
@@ -164,7 +164,7 @@
     "text": "【Good Ending】雨后的约定"
   },
 
-  { "cmd": "jump", "jump": "the_end" },
+  { "cmd": "jump", "jumpTo": "the_end" },
 
   { "jumpFlag": "normal_ending" },
 

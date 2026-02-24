@@ -4,10 +4,12 @@ import { StoryCmd } from './story_config';
 import { story_chat_view } from './story_chat_view';
 import { story_choose_view } from './story_choose_view';
 import { mius } from '../../core/mius';
+import { UIID } from '../config/ui_config';
+import { UIComponent } from '../../core/ui/layer/UIComponent';
 const { ccclass, property } = _decorator;
 
 @ccclass('story_game')
-export class story_game extends Component {
+export class story_game extends UIComponent {
     @property(Node)
     node_main: Node = null!
 
@@ -22,6 +24,11 @@ export class story_game extends Component {
 
     @property(story_manager)
     story_manager: story_manager = null!
+
+
+    add_listener() {
+        this.on_evt(mius.evt.STORY_EVT.QUIT_GAME, this.hide_myself, this)
+    }
 
     /** 是否等待中（对话 / 选择） */
     private _waiting: boolean = false;
@@ -100,7 +107,7 @@ export class story_game extends Component {
                 break;
 
             case 'jump':
-                this.deal_jump_cmd(cmd.jump)
+                this.deal_jump_cmd(cmd.jumpTo)
                 break;
 
             case 'set':
@@ -154,6 +161,10 @@ export class story_game extends Component {
 
     on_click_start(){
         this.show_game_view()
+    }
+
+    on_click_setting(){
+        mius.gui.show_ui(UIID.STORY_SETTING);
     }
 }
 

@@ -15,17 +15,14 @@ import { EventManager } from '../../core/event/EventManager';
 import { UserManager } from '../data/UserManager';
 import { HeartbeatController } from '../../core/network/HeartbeatController';
 import { AppConfig } from '../../core/AppConfig';
-import { GlobalTool } from '../../core/common/tool/global_tool';
-import { BUILD, DEBUG, DEV, EDITOR, HTML5, NATIVE, PREVIEW } from "cc/env";
 import { VERSION } from '../../version';
 import { UIID } from '../config/ui_config';
-import { assetManager } from 'cc';
 import { BundleManager } from '../../core/common/bundle/BundleManager';
 
 const { ccclass, property } = _decorator;
 
 /**
- * 这个脚本挂在 cat.scene 的 root 节点下面，随游戏启动
+ * 这个脚本挂在 loading.scene 的 root 节点下面，随游戏启动
  */
 
 @ccclass('loading')
@@ -176,8 +173,8 @@ export class loading extends Root {
 
             if (!mius.gui.get_is_showing(UIID.LOBBY_UI)) {
                 mius.gui.show_ui(UIID.LOBBY_UI);
-                mius.bundle.loadBundle("story")
-                mius.gui.show_ui(UIID.STORY_MAIN);
+                // mius.bundle.loadBundle("story")
+                // mius.gui.show_ui(UIID.STORY_MAIN);
             }
             // let uid = mius.user.uid;
             // let token = mius.user.token

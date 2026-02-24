@@ -50,7 +50,9 @@ export enum UIID {
     TEST_UI = 52,
 
     // story
-    STORY_MAIN = 70,
+    LOAD_GAME = 70,
+    STORY_MAIN = 71,
+    STORY_SETTING = 72,
 }
 
 export const UI_CONFIG_DATA: UI_VAR.UI_CONFIG[] = [
@@ -80,9 +82,13 @@ export const UI_CONFIG_DATA: UI_VAR.UI_CONFIG[] = [
     { uiid: UIID.NOTICE_DIALOG, layer: LayerType.PopUp, prefab: "ui/common/notice_dialog" },
 
     { uiid: UIID.LOBBY_UI, layer: LayerType.UI, bundle: "cat", prefab: "prefab/lobby" },
-    { uiid: UIID.GAME_2048, layer: LayerType.UI, bundle: "game_2048", prefab: "prefab/game_main" },
     { uiid: UIID.TEST_UI, layer: LayerType.UI, bundle: "cat", prefab: "prefab/test" },
 
     // story
+    { uiid: UIID.LOAD_GAME, layer: LayerType.UI, bundle: "cat", prefab: "prefab/load_game" },
     { uiid: UIID.STORY_MAIN, layer: LayerType.UI, bundle: "story", prefab: "prefab/story_game" },
+    { uiid: UIID.STORY_SETTING, layer: LayerType.UI, bundle: "story", prefab: "prefab/story_setting" },
+
+    // little_game
+    { uiid: UIID.GAME_2048, layer: LayerType.UI, bundle: "game_2048", prefab: "prefab/game_main" },
 ]

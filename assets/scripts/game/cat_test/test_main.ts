@@ -6,6 +6,8 @@ const { ccclass, property } = _decorator;
 @ccclass('test_main')
 export class test_main extends GameRoot {
 
+    @property(Node) lab_title: Node = null!;
+
     @property(Node) startPanel: Node = null!;
     @property(Node) questionPanel: Node = null!;
     @property(Node) resultPanel: Node = null!;

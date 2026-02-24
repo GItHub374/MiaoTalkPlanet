@@ -7,7 +7,7 @@ export interface StoryCmd {
     text?: string;
 
     // jump
-    jump?: string;
+    jumpTo?: string;
 
     // choice
     options?: {

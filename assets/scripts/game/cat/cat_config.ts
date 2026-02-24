@@ -1,15 +1,6 @@
 import { UIID } from "../config/ui_config";
 
 export namespace CAT_CONFIG {
-    export const VOICE_CONFIG: { voice: string }[] = [
-        { voice: "audio/cat_voice_1" },
-        { voice: "audio/cat_voice_2" },
-        { voice: "audio/cat_voice_3" },
-        { voice: "audio/cat_voice_4" },
-        { voice: "audio/cat_voice_5" },
-        { voice: "audio/cat_voice_6" },
-    ]
-
     export enum CONTENT_TYPE {
         NONE = 0,
         TITLE = 1,
@@ -31,7 +22,7 @@ export namespace CAT_CONFIG {
         { type: CONTENT_TYPE.VOICE, text: "voice_icon_hx", img_path: "cat:images/voice/voice_icon_hx", voice_path: "audio/cat_voice_4" },
         { type: CONTENT_TYPE.VOICE, text: "voice_icon_jy", img_path: "cat:images/voice/voice_icon_jy", voice_path: "audio/cat_voice_5" },
         { type: CONTENT_TYPE.VOICE, text: "voice_icon_ml", img_path: "cat:images/voice/voice_icon_ml", voice_path: "audio/cat_voice_6" },
-        { type: CONTENT_TYPE.TITLE, text: "陪猫咪玩" },
+        { type: CONTENT_TYPE.TITLE, text: "陪猫咪玩2" },
         { type: CONTENT_TYPE.VOICE, text: "voice_icon_qt", img_path: "cat:images/voice/voice_icon_qt", voice_path: "audio/cat_voice_1" },
         { type: CONTENT_TYPE.VOICE, text: "voice_icon_gx", img_path: "cat:images/voice/voice_icon_gx", voice_path: "audio/cat_voice_2" },
         { type: CONTENT_TYPE.VOICE, text: "voice_icon_hs", img_path: "cat:images/voice/voice_icon_hs", voice_path: "audio/cat_voice_3" },
@@ -39,6 +30,16 @@ export namespace CAT_CONFIG {
         { type: CONTENT_TYPE.VOICE, text: "voice_icon_jy", img_path: "cat:images/voice/voice_icon_jy", voice_path: "audio/cat_voice_5" },
         { type: CONTENT_TYPE.VOICE, text: "voice_icon_ml", img_path: "cat:images/voice/voice_icon_ml", voice_path: "audio/cat_voice_6" },
     ]
+
+    type GAME_TYPE = {
+        bundle_name: string;
+        show_uid: number;
+        img_path?: string;
+    };
+
+    export const STORY_GAME_CONFIG = new Map<string, GAME_TYPE>([
+        ["cat_day", { bundle_name: "story", img_path: "images", show_uid: UIID.STORY_MAIN }],
+    ]);
 
     export const GAME_CONFIG: { game_id: number }[] = [
         { game_id: UIID.GAME_2048 },
@@ -49,6 +50,19 @@ export namespace CAT_CONFIG {
         { game_id: UIID.GAME_2048 },
     ]
 
+
+
+
+
+
+
+
+
+
+
+
+
+    
     export const MAX_PLAYER_NUM = 4;
     export const DICE_TIME = 8; // 正常行动时间
     export const AUTO_TIME = 5;  // 托管时间

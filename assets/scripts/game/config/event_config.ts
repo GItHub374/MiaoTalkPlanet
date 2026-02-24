@@ -42,4 +42,8 @@ export namespace EVENT_VAR {
         STAND_UP_RSP = "GAME.STAND_UP_RSP", // 坐下返回
         STAND_UP_BRC = "GAME.STAND_UP_BRC", // 坐下广播
     }
+
+    export enum STORY_EVT {
+        QUIT_GAME = "STORY.QUIT_GAME",
+    }
 }
