@@ -92,6 +92,11 @@ export class UserManager extends BaseManager {
     set limit_play_level(value: number) {this._limit_play_level = value;}
     get limit_play_level() {return this._limit_play_level;}
 
+    private _points: number = 0;
+    set points(value: number) { this._points = value; }
+    get points() { return this._points; }
+    
+
     clean(): void {
         this._uid = 0;
         this._coin = 0;

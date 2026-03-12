@@ -44,10 +44,11 @@ export enum UIID {
     LUCKY_MY_HISTORY = 24,
 
     NOTICE_DIALOG = 30,
+    COMMON_DIALOG = 31,
 
     LOBBY_UI = 50,
     GAME_2048 = 51,
-    TEST_UI = 52,
+    TEST_MAIN = 52,
 
     // story
     LOAD_GAME = 70,
@@ -61,7 +62,6 @@ export const UI_CONFIG_DATA: UI_VAR.UI_CONFIG[] = [
     { uiid: UIID.Popup2, layer: LayerType.PopUp, prefab: "ui/view/demo_popup" },
     { uiid: UIID.Dialog1, layer: LayerType.QueuePopup, prefab: "ui/view/demo_dialog" },
     { uiid: UIID.Dialog2, layer: LayerType.QueuePopup, prefab: "ui/view/demo_dialog" },
-    { uiid: UIID.Toast, layer: LayerType.Toast, prefab: "ui/common/toast_node" },
     { uiid: UIID.Demo_WebSocket, layer: LayerType.PopUp, prefab: "ui/view/demo_ws" },
     { uiid: UIID.Demo_HotUpdate, layer: LayerType.PopUp, prefab: "ui/view/demo_hotupdate" },
     { uiid: UIID.Demo_Button, layer: LayerType.PopUp, prefab: "ui/view/demo_button" },
@@ -81,8 +81,11 @@ export const UI_CONFIG_DATA: UI_VAR.UI_CONFIG[] = [
     { uiid: UIID.CHAT_VIEW, layer: LayerType.UI, bundle: "chat", prefab: "prefab/chat_view" },
     { uiid: UIID.NOTICE_DIALOG, layer: LayerType.PopUp, prefab: "ui/common/notice_dialog" },
 
+    { uiid: UIID.Toast, layer: LayerType.Toast, bundle: "cat", prefab: "common/toast_node" },
+    { uiid: UIID.COMMON_DIALOG, layer: LayerType.PopUp, bundle: "cat", prefab: "common/common_dialog" },
+
     { uiid: UIID.LOBBY_UI, layer: LayerType.UI, bundle: "cat", prefab: "prefab/lobby" },
-    { uiid: UIID.TEST_UI, layer: LayerType.UI, bundle: "cat", prefab: "prefab/test" },
+    { uiid: UIID.TEST_MAIN, layer: LayerType.UI, bundle: "cat", prefab: "prefab/test/test_main" },
 
     // story
     { uiid: UIID.LOAD_GAME, layer: LayerType.UI, bundle: "cat", prefab: "prefab/load_game" },

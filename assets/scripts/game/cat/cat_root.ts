@@ -1,5 +1,4 @@
-import { _decorator, Component, Sprite, color, Label, Node } from 'cc';
-import { SpriteFrame, Texture2D, ImageAsset } from 'cc';
+import { _decorator, Component, Sprite, color, Label, Node, SpriteFrame, Texture2D, ImageAsset } from 'cc';
 import { CAT_CONFIG } from './cat_config';
 import { mius } from '../../core/mius';
 import { UIID } from '../config/ui_config';
@@ -40,10 +39,10 @@ export class cat_root extends Component {
         }
     }
 
-    on_click_test(event: Event, customEventData: string) {
-        let game_index = Number(customEventData)
-        mius.gui.show_ui(UIID.TEST_UI);
-    }
+    // on_click_test(event: Event, customEventData: string) {
+    //     let game_index = Number(customEventData)
+    //     mius.gui.show_ui(UIID.TEST_MAIN);
+    // }
 
     on_click_switch_page(event: Event, customEventData: string) {
         let page_index = Number(customEventData)

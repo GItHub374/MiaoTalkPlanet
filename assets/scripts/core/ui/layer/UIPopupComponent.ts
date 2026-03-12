@@ -14,19 +14,19 @@ export class UIPopupComponent extends UIComponent {
 
         if (this.ani_node) {
             this.ani_node.active = false
-            mius.res.load(["animation/common/scale_enter", "animation/common/scale_exit"], (err: Error | null, res: any) => {
+            mius.res.load("cat", ["ani/ani_dialog_enter", "ani/ani_dialog_exit"], (err: Error | null, res: any) => {
                 this.ani_node.active = true
 
                 let anim = this.ani_node.getComponent(Animation);
                 if (!anim) {
                     anim = this.ani_node.addComponent(Animation)
                 }
-                var ac_start : AnimationClip = mius.res.get("animation/common/scale_enter", AnimationClip)!;
-                var ac_end : AnimationClip = mius.res.get("animation/common/scale_exit", AnimationClip)!;
+                var ac_start: AnimationClip = mius.res.get("ani/ani_dialog_enter", AnimationClip, "cat")!;
+                var ac_end: AnimationClip = mius.res.get("ani/ani_dialog_exit", AnimationClip, "cat")!;
                 anim.defaultClip = ac_start;
                 anim.createState(ac_start, ac_start?.name);
                 anim.createState(ac_end, ac_end?.name);
-                anim.play( "scale_enter" )
+                anim.play( "ani_dialog_enter" )
                 anim.on( Animation.EventType.FINISHED, ()=>{
                     this.on_enter_finish()
                 })
@@ -57,7 +57,7 @@ export class UIPopupComponent extends UIComponent {
                     mius.gui.remove( this.uiid, true );
                     this.on_exit_finish()
                 } )
-                comp.play( "scale_exit" )
+                comp.play( "ani_dialog_exit" )
             }
         }else{
             mius.gui.remove( this.uiid, true );
@@ -76,7 +76,7 @@ export class UIPopupComponent extends UIComponent {
                 comp.on(Animation.EventType.FINISHED, ()=>{
                     mius.gui.remove( this.uiid, true );
                 })
-                comp.play( "scale_exit" )
+                comp.play( "ani_dialog_exit" )
             }
         }else{
             mius.gui.remove( this.uiid, true );

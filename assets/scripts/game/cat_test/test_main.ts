@@ -25,10 +25,16 @@ export class test_main extends GameRoot {
     @property(Label) resultTitle: Label = null!;
     @property(Label) resultDesc: Label = null!;
 
+    private test_id = 0;
     private index = 0;
     private score = 0;
 
     private answers: number[] = [];
+
+    onLoad(): void {
+        super.onLoad()
+        this.test_id = this.build_args.test_id
+    }
 
     start() {
         this.start_test()
